@@ -16,5 +16,25 @@ namespace Mult
         {
             InitializeComponent();
         }
+
+        private void ButtonStart_Click(object sender, EventArgs e)
+        {
+            buttonStart.Text = "Запустить заново";
+            Form2 f = new Form2();
+            f.Show();
+            for (int i = 0; i < 3600; i++)
+                if (a.stop)
+                {
+
+                }
+            buttonStart.Text = "Запустить мультик";
+            a.stop = false;
+            f.Close();
+        }
+
+        private void ButtonStop_Click(object sender, EventArgs e)
+        {
+            a.stop = true;
+        }
     }
 }

@@ -19,4 +19,8 @@ namespace Mult
             Application.Run(new Form1());
         }
     }
+    static class a
+    {
+        static public bool stop = false;
+    }
 }

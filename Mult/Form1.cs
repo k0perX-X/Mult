@@ -25,7 +25,6 @@ namespace Mult
             a.stop = true;
             if (a.FirstStart) { f.Show(); a.FirstStart = false; } 
             if (!a.stopButton) a.i = 0;
-            f.Vivod
             progressBar.Maximum = 3600;
             for (int i = a.i; i < 3600; i++)
                 if (a.stop)

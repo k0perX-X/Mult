@@ -23,7 +23,13 @@ namespace Mult
         }
         public void Vivod(Bitmap bitmap)
         {
+            pictureBox1.Image = bitmap;
+        }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            a.Width = pictureBox1.Width;
+            a.Height = pictureBox1.Height;
         }
     }
 }

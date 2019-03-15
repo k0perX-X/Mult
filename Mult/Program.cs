@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
+
 
 namespace Mult
 {
@@ -18,6 +20,19 @@ namespace Mult
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        public static void DrawCircle(this Graphics g, Pen pen,
+                                 float centerX, float centerY, float radius)
+        {
+            g.DrawEllipse(pen, centerX - radius, centerY - radius,
+                          radius + radius, radius + radius);
+        }
+
+        public static void FillCircle(this Graphics g, Brush brush,
+                                      float centerX, float centerY, float radius)
+        {
+            g.FillEllipse(brush, centerX - radius, centerY - radius,
+                          radius + radius, radius + radius);
+        }
     }
     static class a
     {
@@ -25,5 +40,7 @@ namespace Mult
         static public int i = 0;
         static public bool stopButton = false;
         static public bool FirstStart = true;
+        static public int Height;
+        static public int Width;
     }
 }

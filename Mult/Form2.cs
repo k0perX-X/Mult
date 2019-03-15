@@ -16,5 +16,14 @@ namespace Mult
         {
             InitializeComponent();
         }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            a.FirstStart = true;
+        }
+        public void Vivod(Bitmap bitmap)
+        {
+
+        }
     }
 }

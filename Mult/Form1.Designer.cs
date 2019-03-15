@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.numeric = new System.Windows.Forms.NumericUpDown();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -65,34 +66,50 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Кадров в секунду";
             // 
-            // numericUpDown1
+            // numeric
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(138, 82);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(89, 22);
-            this.numericUpDown1.TabIndex = 4;
+            this.numeric.Location = new System.Drawing.Point(138, 82);
+            this.numeric.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numeric.Name = "numeric";
+            this.numeric.Size = new System.Drawing.Size(89, 22);
+            this.numeric.TabIndex = 4;
+            this.numeric.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             // 
-            // progressBar1
+            // progressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 110);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(215, 29);
-            this.progressBar1.TabIndex = 5;
+            this.progressBar.Location = new System.Drawing.Point(12, 110);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(215, 29);
+            this.progressBar.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(240, 152);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.progressBar);
+            this.Controls.Add(this.numeric);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Мультик";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,8 +119,8 @@
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.NumericUpDown numeric;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }
 

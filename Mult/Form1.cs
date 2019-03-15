@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Mult
@@ -21,20 +21,30 @@ namespace Mult
         {
             buttonStart.Text = "Запустить заново";
             Form2 f = new Form2();
-            f.Show();
-            for (int i = 0; i < 3600; i++)
+            a.stop = false;
+            a.stop = true;
+            if (a.FirstStart) { f.Show(); a.FirstStart = false; } 
+            if (!a.stopButton) a.i = 0;
+            f.Vivod
+            progressBar.Maximum = 3600;
+            for (int i = a.i; i < 3600; i++)
                 if (a.stop)
                 {
-
+                    Application.DoEvents();
+                    progressBar.Value = i;
+                    Thread.Sleep((int)(1000 / numeric.Value));
+                }
+                else
+                {
+                    a.i = i;
                 }
             buttonStart.Text = "Запустить мультик";
-            a.stop = false;
-            f.Close();
         }
 
         private void ButtonStop_Click(object sender, EventArgs e)
         {
-            a.stop = true;
+            a.stop = false;
+            a.stopButton = true;
         }
     }
 }

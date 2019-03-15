@@ -22,5 +22,8 @@ namespace Mult
     static class a
     {
         static public bool stop = false;
+        static public int i = 0;
+        static public bool stopButton = false;
+        static public bool FirstStart = true;
     }
 }

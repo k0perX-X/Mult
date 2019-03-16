@@ -34,6 +34,7 @@
             this.numeric = new System.Windows.Forms.NumericUpDown();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.buttonStop = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,9 +81,9 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(12, 110);
+            this.progressBar.Location = new System.Drawing.Point(12, 137);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(215, 29);
+            this.progressBar.Size = new System.Drawing.Size(215, 26);
             this.progressBar.TabIndex = 5;
             // 
             // buttonStop
@@ -95,19 +96,33 @@
             this.buttonStop.UseVisualStyleBackColor = true;
             this.buttonStop.Click += new System.EventHandler(this.ButtonStop_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(12, 110);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(190, 21);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "Бесконечная анимация ";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 152);
+            this.ClientSize = new System.Drawing.Size(240, 175);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.numeric);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.buttonStart);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::Mult.Properties.Settings.Default, "Loc", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = global::Mult.Properties.Settings.Default.Loc;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Мультик";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).EndInit();
@@ -122,6 +137,7 @@
         private System.Windows.Forms.NumericUpDown numeric;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Button buttonStop;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

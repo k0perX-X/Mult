@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -29,6 +24,29 @@ namespace Mult
             const int MarsR = 230;
             double alphaMars = 0;
             const int uscor = 3;
+            Random rand = new Random();
+            const int MeteorR = 300;
+            const int kolcometeor = 150;
+            int[] meteorX = new int[kolcometeor];
+            for (int i = 0; i < kolcometeor; i++)
+                meteorX[i] = rand.Next(-20, 20);
+            int[] meteorY = new int[kolcometeor];
+            for (int i = 0; i < kolcometeor; i++)
+                meteorY[i] = rand.Next(-20, 20);
+            double[] meteorAlpha = new double[kolcometeor];
+            for (int i = 0; i < kolcometeor; i++)
+                meteorAlpha[i] = Math.PI * rand.NextDouble() * 2;
+            double[] meteorAlphaDelta = new double[kolcometeor];
+            for (int i = 0; i < kolcometeor; i++)
+            {
+                double x = rand.NextDouble();
+                while (x < 0.6)
+                    x = rand.NextDouble();
+                meteorAlphaDelta[i] = (Math.PI / 250) * x;
+            }
+            int[] meteorRand = new int[kolcometeor];
+            for (int i = 0; i < kolcometeor; i++)
+                meteorRand[i] = rand.Next(3, 7);
             buttonStart.Text = "Запустить заново";
             Form2 f = new Form2();
             a.stop = false;
@@ -56,6 +74,9 @@ namespace Mult
                     Program.FillCircle(g, Brushes.Gray, a.Width / 2 + (float)(ZemR * Math.Sin(alphaZem)) + (float)(LunaR * Math.Sin(alphaLuna)), a.Height / 2 + (float)(ZemR * Math.Cos(alphaZem)) + (float)(LunaR * Math.Cos(alphaLuna)), 5);
                     Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, MarsR);
                     Program.FillCircle(g, Brushes.OrangeRed, a.Width / 2 + (float)(MarsR * Math.Sin(alphaMars)), a.Height / 2 + (float)(MarsR * Math.Cos(alphaMars)), 23);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, MeteorR);
+                    for (int j = 0; j < kolcometeor; j++)
+                        Program.FillCircle(g, Brushes.SaddleBrown, a.Width / 2 + (float)(MeteorR * Math.Sin(meteorAlpha[j])) + meteorX[j], a.Height / 2 + (float)(MeteorR * Math.Cos(meteorAlpha[j])) + meteorY[j], meteorRand[j]);
                     f.Vivod(bit);
                     progressBar.Value = i;
                     Thread.Sleep((int)(1000 / numeric.Value));
@@ -64,17 +85,20 @@ namespace Mult
                     alphaZem += Math.PI / 365 * uscor;
                     alphaLuna += Math.PI / 27.321661 * uscor;
                     alphaMars += Math.PI / 667 * uscor;
+                    for (int j = 0; j < kolcometeor; j++)
+                        meteorAlpha[j] += meteorAlphaDelta[j];
                 }
             buttonStart.Text = "Запустить мультик";
             f.Close();
         }
         private void ButtonStop_Click(object sender, EventArgs e)
         {
-            a.stop = false; 
+            a.stop = false;
             a.stopButton = true;
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            a.stop = false;
         }
     }
 }

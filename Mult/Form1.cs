@@ -13,7 +13,6 @@ namespace Mult
         }
         private void ButtonStart_Click(object sender, EventArgs e)
         {
-            
             const int MercR = 70;
             double alphaMerc = 0;
             const int VenerR = 115;

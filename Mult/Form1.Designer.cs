@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.buttonStart = new System.Windows.Forms.Button();
-            this.buttonStop = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.numeric = new System.Windows.Forms.NumericUpDown();
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.buttonStop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,16 +46,6 @@
             this.buttonStart.Text = "Запустить мультик ";
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.ButtonStart_Click);
-            // 
-            // buttonStop
-            // 
-            this.buttonStop.Location = new System.Drawing.Point(12, 47);
-            this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(215, 29);
-            this.buttonStop.TabIndex = 2;
-            this.buttonStop.Text = "Остоновить мультик ";
-            this.buttonStop.UseVisualStyleBackColor = true;
-            this.buttonStop.Click += new System.EventHandler(this.ButtonStop_Click);
             // 
             // label1
             // 
@@ -83,7 +73,7 @@
             this.numeric.Size = new System.Drawing.Size(89, 22);
             this.numeric.TabIndex = 4;
             this.numeric.Value = new decimal(new int[] {
-            30,
+            60,
             0,
             0,
             0});
@@ -94,6 +84,16 @@
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(215, 29);
             this.progressBar.TabIndex = 5;
+            // 
+            // buttonStop
+            // 
+            this.buttonStop.Location = new System.Drawing.Point(12, 47);
+            this.buttonStop.Name = "buttonStop";
+            this.buttonStop.Size = new System.Drawing.Size(215, 29);
+            this.buttonStop.TabIndex = 2;
+            this.buttonStop.Text = "Остоновить мультик ";
+            this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.ButtonStop_Click);
             // 
             // Form1
             // 
@@ -118,10 +118,10 @@
 
         #endregion
         private System.Windows.Forms.Button buttonStart;
-        private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numeric;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Button buttonStop;
     }
 }
 

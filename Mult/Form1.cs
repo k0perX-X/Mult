@@ -18,38 +18,55 @@ namespace Mult
         }
         private void ButtonStart_Click(object sender, EventArgs e)
         {
-            int MercR = 80;
+            const int MercR = 50;
             double alphaMerc = 0;
+            const int VenerR = 85;
+            double alphaVener = 0;
+            const int ZemR = 150;
+            double alphaZem = 0;
+            const int LunaR = 40;
+            double alphaLuna = 0;
+            const int MarsR = 230;
+            double alphaMars = 0;
+            const int uscor = 3;
             buttonStart.Text = "Запустить заново";
             Form2 f = new Form2();
             a.stop = false;
-            a.stop = true;
-            if (a.FirstStart) { f.Show(); a.FirstStart = false; } 
-            if (!a.stopButton) a.i = 0;
-            progressBar.Maximum = 3600;
+            if (a.FirstStart) { f.Show(); a.FirstStart = false; }
             Bitmap bit = new Bitmap(a.Width, a.Height);
             Pen p = new Pen(Color.White, 1);
             Graphics g = Graphics.FromImage(bit);
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            for (int i = a.i; i < 3600; i++)
+            a.stop = true;
+            if (!a.stopButton) a.i = 0;
+            progressBar.Maximum = 1000;
+            for (int i = a.i; i < 1000; i++)
                 if (a.stop)
                 {
                     Application.DoEvents();
                     g.FillRectangle(Brushes.Black, 0, 0, a.Width, a.Height);
-                    Program.FillCircle(g, Brushes.OrangeRed, a.Width / 2, a.Height / 2, 40);
+                    Program.FillCircle(g, Brushes.DarkOrange, a.Width / 2, a.Height / 2, 30);
                     Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, MercR);
-                    Program.FillCircle(g, Brushes.Brown, a.Width / 2 + (float)(MercR * Math.Sin(alphaMerc)), a.Height / 2 + (float)(MercR * Math.Cos(alphaMerc)), 20);
-
+                    Program.FillCircle(g, Brushes.Brown, a.Width / 2 + (float)(MercR * Math.Sin(alphaMerc)), a.Height / 2 + (float)(MercR * Math.Cos(alphaMerc)), 10);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, VenerR);
+                    Program.FillCircle(g, Brushes.SandyBrown, a.Width / 2 + (float)(VenerR * Math.Sin(alphaVener)), a.Height / 2 + (float)(VenerR * Math.Cos(alphaVener)), 20);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, ZemR);
+                    Program.FillCircle(g, Brushes.Blue, a.Width / 2 + (float)(ZemR * Math.Sin(alphaZem)), a.Height / 2 + (float)(ZemR * Math.Cos(alphaZem)), 25);
+                    Program.DrawCircle(g, p, a.Width / 2 + (float)(ZemR * Math.Sin(alphaZem)), a.Height / 2 + (float)(ZemR * Math.Cos(alphaZem)), LunaR);
+                    Program.FillCircle(g, Brushes.Gray, a.Width / 2 + (float)(ZemR * Math.Sin(alphaZem)) + (float)(LunaR * Math.Sin(alphaLuna)), a.Height / 2 + (float)(ZemR * Math.Cos(alphaZem)) + (float)(LunaR * Math.Cos(alphaLuna)), 5);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, MarsR);
+                    Program.FillCircle(g, Brushes.OrangeRed, a.Width / 2 + (float)(MarsR * Math.Sin(alphaMars)), a.Height / 2 + (float)(MarsR * Math.Cos(alphaMars)), 23);
                     f.Vivod(bit);
                     progressBar.Value = i;
                     Thread.Sleep((int)(1000 / numeric.Value));
-                    alphaMerc += 0.01;
-                }
-                else
-                {
-                    a.i = i;
+                    alphaMerc += Math.PI / 88 * uscor;
+                    alphaVener += Math.PI / 225 * uscor;
+                    alphaZem += Math.PI / 365 * uscor;
+                    alphaLuna += Math.PI / 27.321661 * uscor;
+                    alphaMars += Math.PI / 667 * uscor;
                 }
             buttonStart.Text = "Запустить мультик";
+            f.Close();
         }
         private void ButtonStop_Click(object sender, EventArgs e)
         {
@@ -58,8 +75,6 @@ namespace Mult
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Form2 f = new Form2();
-            f.close();
         }
     }
 }

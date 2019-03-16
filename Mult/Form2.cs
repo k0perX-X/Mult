@@ -20,12 +20,16 @@ namespace Mult
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             a.FirstStart = true;
+            a.stop = true;
         }
         public void Vivod(Bitmap bitmap)
         {
             pictureBox1.Image = bitmap;
         }
-
+        public void close()
+        {
+            this.Close();
+        }
         private void Form2_Load(object sender, EventArgs e)
         {
             a.Width = pictureBox1.Width;

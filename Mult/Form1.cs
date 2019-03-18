@@ -77,7 +77,7 @@ namespace Mult
                             Program.FillCircle(g, Brushes.SaddleBrown, a.Width / 2 + (float)((MeteorR + meteorX[j]) * Math.Sin(meteorAlpha[j])), a.Height / 2 + (float)((MeteorR + meteorX[j]) * Math.Cos(meteorAlpha[j])), meteorRand[j]);
                         f.Vivod(bit);
                         progressBar.Value = i;
-                        Thread.Sleep((int)(1000 / numeric.Value));
+                        Thread.Sleep((int)(1000 / numeric.Value)-1);
                         alphaMerc += Math.PI / 88 * uscor;
                         alphaVener += Math.PI / 225 * uscor;
                         alphaZem += Math.PI / 365 * uscor;
@@ -109,7 +109,7 @@ namespace Mult
                     for (int j = 0; j < kolcometeor; j++)
                         Program.FillCircle(g, Brushes.SaddleBrown, a.Width / 2 + (float)((MeteorR + meteorX[j]) * Math.Sin(meteorAlpha[j])), a.Height / 2 + (float)((MeteorR + meteorX[j]) * Math.Cos(meteorAlpha[j])), meteorRand[j]);
                     f.Vivod(bit);
-                    Thread.Sleep((int)(1000 / numeric.Value));
+                    Thread.Sleep((int)(1000 / numeric.Value)-1);
                     alphaMerc += Math.PI / 88 * uscor;
                     alphaVener += Math.PI / 225 * uscor;
                     alphaZem += Math.PI / 365 * uscor;

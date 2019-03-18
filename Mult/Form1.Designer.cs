@@ -35,6 +35,9 @@
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.buttonStop = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.FPS = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelFPS = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,9 +84,9 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(12, 137);
+            this.progressBar.Location = new System.Drawing.Point(12, 181);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(215, 26);
+            this.progressBar.Size = new System.Drawing.Size(215, 29);
             this.progressBar.TabIndex = 5;
             // 
             // buttonStop
@@ -106,11 +109,43 @@
             this.checkBox1.Text = "Бесконечная анимация ";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // FPS
+            // 
+            this.FPS.AutoSize = true;
+            this.FPS.Location = new System.Drawing.Point(12, 137);
+            this.FPS.Name = "FPS";
+            this.FPS.Size = new System.Drawing.Size(147, 21);
+            this.FPS.TabIndex = 7;
+            this.FPS.Text = "Отслеживать FPS";
+            this.FPS.UseVisualStyleBackColor = true;
+            this.FPS.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(131, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Фактический FPS:";
+            // 
+            // labelFPS
+            // 
+            this.labelFPS.AutoSize = true;
+            this.labelFPS.Location = new System.Drawing.Point(145, 161);
+            this.labelFPS.Name = "labelFPS";
+            this.labelFPS.Size = new System.Drawing.Size(28, 17);
+            this.labelFPS.TabIndex = 9;
+            this.labelFPS.Text = "0.0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 175);
+            this.ClientSize = new System.Drawing.Size(240, 222);
+            this.Controls.Add(this.labelFPS);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.FPS);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.numeric);
@@ -138,6 +173,9 @@
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox FPS;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelFPS;
     }
 }
 

@@ -42,5 +42,7 @@ namespace Mult
         static public bool FirstStart = true;
         static public int Height;
         static public int Width;
+        static public int FPS = 0;
+        static public string realFPS = "0.0";
     }
 }

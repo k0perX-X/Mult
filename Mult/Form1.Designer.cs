@@ -38,7 +38,10 @@
             this.FPS = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelFPS = new System.Windows.Forms.Label();
+            this.numericMeteor = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMeteor)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -84,9 +87,9 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(12, 181);
+            this.progressBar.Location = new System.Drawing.Point(13, 209);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(215, 29);
+            this.progressBar.Size = new System.Drawing.Size(215, 27);
             this.progressBar.TabIndex = 5;
             // 
             // buttonStop
@@ -138,11 +141,39 @@
             this.labelFPS.TabIndex = 9;
             this.labelFPS.Text = "0.0";
             // 
+            // numericMeteor
+            // 
+            this.numericMeteor.Location = new System.Drawing.Point(152, 181);
+            this.numericMeteor.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericMeteor.Name = "numericMeteor";
+            this.numericMeteor.Size = new System.Drawing.Size(76, 22);
+            this.numericMeteor.TabIndex = 10;
+            this.numericMeteor.Value = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 183);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 17);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Кол-во астероидов";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 222);
+            this.ClientSize = new System.Drawing.Size(240, 248);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.numericMeteor);
             this.Controls.Add(this.labelFPS);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FPS);
@@ -161,6 +192,7 @@
             this.Text = "Мультик";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericMeteor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,6 +208,8 @@
         private System.Windows.Forms.CheckBox FPS;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelFPS;
+        private System.Windows.Forms.NumericUpDown numericMeteor;
+        private System.Windows.Forms.Label label3;
     }
 }
 

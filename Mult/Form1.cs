@@ -32,7 +32,7 @@ namespace Mult
                 const int uscor = 1;
                 Random rand = new Random();
                 const int MeteorR = 390;
-                const int kolcometeor = 200;
+                int kolcometeor = (int)(numericMeteor.Value);
                 int[] meteorX = new int[kolcometeor];
                 for (int i = 0; i < kolcometeor; i++)
                     meteorX[i] = rand.Next(-15, 15);
@@ -181,7 +181,7 @@ namespace Mult
                 const int uscor = 1;
                 Random rand = new Random();
                 const int MeteorR = 390;
-                const int kolcometeor = 200;
+                int kolcometeor = (int)(numericMeteor.Value);
                 int[] meteorX = new int[kolcometeor];
                 for (int i = 0; i < kolcometeor; i++)
                     meteorX[i] = rand.Next(-15, 15);

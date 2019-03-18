@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Mult
 {
@@ -60,6 +61,40 @@ namespace Mult
                 a.stop = true;
                 if (!a.stopButton) a.i = 0;
                 progressBar.Maximum = 2000;
+                Stopwatch stopWatch = new Stopwatch();
+                stopWatch.Start();
+                for (int i = a.i; i < 16; i++)
+                {
+                    Application.DoEvents();
+                    g.FillRectangle(Brushes.Black, 0, 0, a.Width, a.Height);
+                    Program.FillCircle(g, Brushes.DarkOrange, a.Width / 2, a.Height / 2, 40);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, MercR);
+                    Program.FillCircle(g, Brushes.Brown, a.Width / 2 + (float)(MercR * Math.Sin(alphaMerc)), a.Height / 2 + (float)(MercR * Math.Cos(alphaMerc)), 10);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, VenerR);
+                    Program.FillCircle(g, Brushes.SandyBrown, a.Width / 2 + (float)(VenerR * Math.Sin(alphaVener)), a.Height / 2 + (float)(VenerR * Math.Cos(alphaVener)), 20);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, ZemR);
+                    Program.FillCircle(g, Brushes.Blue, a.Width / 2 + (float)(ZemR * Math.Sin(alphaZem)), a.Height / 2 + (float)(ZemR * Math.Cos(alphaZem)), 25);
+                    Program.DrawCircle(g, p, a.Width / 2 + (float)(ZemR * Math.Sin(alphaZem)), a.Height / 2 + (float)(ZemR * Math.Cos(alphaZem)), LunaR);
+                    Program.FillCircle(g, Brushes.Gray, a.Width / 2 + (float)(ZemR * Math.Sin(alphaZem)) + (float)(LunaR * Math.Sin(alphaLuna)), a.Height / 2 + (float)(ZemR * Math.Cos(alphaZem)) + (float)(LunaR * Math.Cos(alphaLuna)), 8);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, MarsR);
+                    Program.FillCircle(g, Brushes.OrangeRed, a.Width / 2 + (float)(MarsR * Math.Sin(alphaMars)), a.Height / 2 + (float)(MarsR * Math.Cos(alphaMars)), 23);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, MeteorR);
+                    for (int j = 0; j < kolcometeor; j++)
+                        Program.FillCircle(g, Brushes.SaddleBrown, a.Width / 2 + (float)((MeteorR + meteorX[j]) * Math.Sin(meteorAlpha[j])), a.Height / 2 + (float)((MeteorR + meteorX[j]) * Math.Cos(meteorAlpha[j])), meteorRand[j]);
+                    f.Vivod(bit);
+                    alphaMerc += Math.PI / 88 * uscor;
+                    alphaVener += Math.PI / 225 * uscor;
+                    alphaZem += Math.PI / 365 * uscor;
+                    alphaLuna += Math.PI / 27.321661 * uscor;
+                    alphaMars += Math.PI / 667 * uscor;
+                    for (int j = 0; j < kolcometeor; j++)
+                        meteorAlpha[j] += meteorAlphaDelta[j];
+                    a.FPS += 1;
+                    labelFPS.Text = a.realFPS;
+                }
+                stopWatch.Stop();
+                int vrem = (int)(stopWatch.ElapsedMilliseconds / 15);
+                numeric.Maximum = 1000 / vrem;
                 if (!checkBox1.Checked)
                     for (int i = a.i; i < 2000; i++)
                         if (a.stop)
@@ -82,7 +117,7 @@ namespace Mult
                                 Program.FillCircle(g, Brushes.SaddleBrown, a.Width / 2 + (float)((MeteorR + meteorX[j]) * Math.Sin(meteorAlpha[j])), a.Height / 2 + (float)((MeteorR + meteorX[j]) * Math.Cos(meteorAlpha[j])), meteorRand[j]);
                             f.Vivod(bit);
                             progressBar.Value = i;
-                            Thread.Sleep((int)(1000 / numeric.Value) - 1);
+                            Thread.Sleep((int)(1000 / numeric.Value) - vrem);
                             alphaMerc += Math.PI / 88 * uscor;
                             alphaVener += Math.PI / 225 * uscor;
                             alphaZem += Math.PI / 365 * uscor;
@@ -116,7 +151,7 @@ namespace Mult
                         for (int j = 0; j < kolcometeor; j++)
                             Program.FillCircle(g, Brushes.SaddleBrown, a.Width / 2 + (float)((MeteorR + meteorX[j]) * Math.Sin(meteorAlpha[j])), a.Height / 2 + (float)((MeteorR + meteorX[j]) * Math.Cos(meteorAlpha[j])), meteorRand[j]);
                         f.Vivod(bit);
-                        Thread.Sleep((int)(1000 / numeric.Value) - 1);
+                        Thread.Sleep((int)(1000 / numeric.Value) - vrem);
                         alphaMerc += Math.PI / 88 * uscor;
                         alphaVener += Math.PI / 225 * uscor;
                         alphaZem += Math.PI / 365 * uscor;
@@ -175,6 +210,41 @@ namespace Mult
                 a.stop = true;
                 if (!a.stopButton) a.i = 0;
                 progressBar.Maximum = 2000;
+                Stopwatch stopWatch = new Stopwatch();
+                stopWatch.Start();
+                for (int i = a.i; i < 6; i++)
+                {
+                    Application.DoEvents();
+                    g.FillRectangle(Brushes.Black, 0, 0, a.Width, a.Height);
+                    Program.FillCircle(g, Brushes.DarkOrange, a.Width / 2, a.Height / 2, 40);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, MercR);
+                    Program.FillCircle(g, Brushes.Brown, a.Width / 2 + (float)(MercR * Math.Sin(alphaMerc)), a.Height / 2 + (float)(MercR * Math.Cos(alphaMerc)), 10);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, VenerR);
+                    Program.FillCircle(g, Brushes.SandyBrown, a.Width / 2 + (float)(VenerR * Math.Sin(alphaVener)), a.Height / 2 + (float)(VenerR * Math.Cos(alphaVener)), 20);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, ZemR);
+                    Program.FillCircle(g, Brushes.Blue, a.Width / 2 + (float)(ZemR * Math.Sin(alphaZem)), a.Height / 2 + (float)(ZemR * Math.Cos(alphaZem)), 25);
+                    Program.DrawCircle(g, p, a.Width / 2 + (float)(ZemR * Math.Sin(alphaZem)), a.Height / 2 + (float)(ZemR * Math.Cos(alphaZem)), LunaR);
+                    Program.FillCircle(g, Brushes.Gray, a.Width / 2 + (float)(ZemR * Math.Sin(alphaZem)) + (float)(LunaR * Math.Sin(alphaLuna)), a.Height / 2 + (float)(ZemR * Math.Cos(alphaZem)) + (float)(LunaR * Math.Cos(alphaLuna)), 8);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, MarsR);
+                    Program.FillCircle(g, Brushes.OrangeRed, a.Width / 2 + (float)(MarsR * Math.Sin(alphaMars)), a.Height / 2 + (float)(MarsR * Math.Cos(alphaMars)), 23);
+                    Program.DrawCircle(g, p, a.Width / 2, a.Height / 2, MeteorR);
+                    for (int j = 0; j < kolcometeor; j++)
+                        Program.FillCircle(g, Brushes.SaddleBrown, a.Width / 2 + (float)((MeteorR + meteorX[j]) * Math.Sin(meteorAlpha[j])), a.Height / 2 + (float)((MeteorR + meteorX[j]) * Math.Cos(meteorAlpha[j])), meteorRand[j]);
+                    f.Vivod(bit);
+                    Thread.Sleep((int)(1000 / numeric.Value) - 1);
+                    alphaMerc += Math.PI / 88 * uscor;
+                    alphaVener += Math.PI / 225 * uscor;
+                    alphaZem += Math.PI / 365 * uscor;
+                    alphaLuna += Math.PI / 27.321661 * uscor;
+                    alphaMars += Math.PI / 667 * uscor;
+                    for (int j = 0; j < kolcometeor; j++)
+                        meteorAlpha[j] += meteorAlphaDelta[j];
+                    a.FPS += 1;
+                    labelFPS.Text = a.realFPS;
+                }
+                stopWatch.Stop();
+                int vrem = (int)(stopWatch.ElapsedMilliseconds / 5);
+                numeric.Maximum = 1000 / vrem;
                 if (!checkBox1.Checked)
                     for (int i = a.i; i < 2000; i++)
                         if (a.stop)
@@ -197,7 +267,7 @@ namespace Mult
                                 Program.FillCircle(g, Brushes.SaddleBrown, a.Width / 2 + (float)((MeteorR + meteorX[j]) * Math.Sin(meteorAlpha[j])), a.Height / 2 + (float)((MeteorR + meteorX[j]) * Math.Cos(meteorAlpha[j])), meteorRand[j]);
                             f.Vivod(bit);
                             progressBar.Value = i;
-                            Thread.Sleep((int)(1000 / numeric.Value) - 1);
+                            Thread.Sleep((int)(1000 / numeric.Value) - vrem);
                             alphaMerc += Math.PI / 88 * uscor;
                             alphaVener += Math.PI / 225 * uscor;
                             alphaZem += Math.PI / 365 * uscor;
@@ -229,7 +299,7 @@ namespace Mult
                         for (int j = 0; j < kolcometeor; j++)
                             Program.FillCircle(g, Brushes.SaddleBrown, a.Width / 2 + (float)((MeteorR + meteorX[j]) * Math.Sin(meteorAlpha[j])), a.Height / 2 + (float)((MeteorR + meteorX[j]) * Math.Cos(meteorAlpha[j])), meteorRand[j]);
                         f.Vivod(bit);
-                        Thread.Sleep((int)(1000 / numeric.Value) - 1);
+                        Thread.Sleep((int)(1000 / numeric.Value) - vrem);
                         alphaMerc += Math.PI / 88 * uscor;
                         alphaVener += Math.PI / 225 * uscor;
                         alphaZem += Math.PI / 365 * uscor;
@@ -245,7 +315,7 @@ namespace Mult
         }
         private static void Count(object obj)
         {
-            a.realFPS = Math.Round(a.FPS / 0.5).ToString() + "." + Math.Round(a.FPS / 5.0).ToString();
+            a.realFPS = Math.Round(a.FPS / 0.5).ToString();
             a.FPS = 0;
         }
         private void ButtonStop_Click(object sender, EventArgs e)

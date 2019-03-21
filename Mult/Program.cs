@@ -45,4 +45,13 @@ namespace Mult
         static public int FPS = 0;
         static public string realFPS = "0.0";
     }
+    public class mol
+    {
+        public int radius;
+        public int mass;
+        public double x;
+        public double y;
+        public double impulsX;
+        public double impulsY;
+    }
 }

@@ -30,9 +30,6 @@ begin
     begin
       r := radiusB;
       m := massaB;
-      j := random(razbros) + 1;
-      ix := 0;
-      iy := 0;
       repeat
         flag := true;
         x := random(wl - 2 * r) + r;
@@ -46,8 +43,7 @@ begin
         end;
       until flag;
     end;
-  for i := kB to kM + kB //opisanie molekul
-    do 
+  for i := kB to kM + kB  do //opisanie molekul
     with molek[i] do
     begin
       r := radiusM; 
@@ -123,7 +119,6 @@ begin
             molek[j].iy := py + molek[j].iy;
           end;
         end;
-    
     sleep(20);
     redraw;
   end;

@@ -38,10 +38,16 @@
             this.FPS = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelFPS = new System.Windows.Forms.Label();
-            this.numericMeteor = new System.Windows.Forms.NumericUpDown();
+            this.numeriсM = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numericB = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.numericSootn = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericMeteor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeriсM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericSootn)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonStart
@@ -87,9 +93,9 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(13, 209);
+            this.progressBar.Location = new System.Drawing.Point(12, 282);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(215, 27);
+            this.progressBar.Size = new System.Drawing.Size(215, 28);
             this.progressBar.TabIndex = 5;
             // 
             // buttonStop
@@ -115,6 +121,8 @@
             // FPS
             // 
             this.FPS.AutoSize = true;
+            this.FPS.Checked = true;
+            this.FPS.CheckState = System.Windows.Forms.CheckState.Checked;
             this.FPS.Location = new System.Drawing.Point(12, 137);
             this.FPS.Name = "FPS";
             this.FPS.Size = new System.Drawing.Size(147, 21);
@@ -126,7 +134,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 161);
+            this.label2.Location = new System.Drawing.Point(9, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 17);
             this.label2.TabIndex = 8;
@@ -141,19 +149,19 @@
             this.labelFPS.TabIndex = 9;
             this.labelFPS.Text = "0.0";
             // 
-            // numericMeteor
+            // numeriсM
             // 
-            this.numericMeteor.Location = new System.Drawing.Point(152, 181);
-            this.numericMeteor.Maximum = new decimal(new int[] {
-            10000,
+            this.numeriсM.Location = new System.Drawing.Point(144, 181);
+            this.numeriсM.Maximum = new decimal(new int[] {
+            50,
             0,
             0,
             0});
-            this.numericMeteor.Name = "numericMeteor";
-            this.numericMeteor.Size = new System.Drawing.Size(76, 22);
-            this.numericMeteor.TabIndex = 10;
-            this.numericMeteor.Value = new decimal(new int[] {
-            200,
+            this.numeriсM.Name = "numeriсM";
+            this.numeriсM.Size = new System.Drawing.Size(84, 22);
+            this.numeriсM.TabIndex = 10;
+            this.numeriсM.Value = new decimal(new int[] {
+            20,
             0,
             0,
             0});
@@ -161,19 +169,80 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 183);
+            this.label3.Location = new System.Drawing.Point(9, 183);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 17);
+            this.label3.Size = new System.Drawing.Size(126, 17);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Кол-во астероидов";
+            this.label3.Text = "Кол-во маленьких";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 211);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 17);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Кол-во больших";
+            // 
+            // numericB
+            // 
+            this.numericB.Location = new System.Drawing.Point(144, 209);
+            this.numericB.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericB.Name = "numericB";
+            this.numericB.Size = new System.Drawing.Size(84, 22);
+            this.numericB.TabIndex = 12;
+            this.numericB.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 234);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(215, 17);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Соотношение масс и радиусов ";
+            // 
+            // numericSootn
+            // 
+            this.numericSootn.Location = new System.Drawing.Point(12, 254);
+            this.numericSootn.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.numericSootn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericSootn.Name = "numericSootn";
+            this.numericSootn.Size = new System.Drawing.Size(216, 22);
+            this.numericSootn.TabIndex = 15;
+            this.numericSootn.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(240, 248);
+            this.ClientSize = new System.Drawing.Size(240, 322);
+            this.Controls.Add(this.numericSootn);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.numericB);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericMeteor);
+            this.Controls.Add(this.numeriсM);
             this.Controls.Add(this.labelFPS);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FPS);
@@ -192,7 +261,9 @@
             this.Text = "Мультик";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericMeteor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numeriсM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericSootn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,8 +279,12 @@
         private System.Windows.Forms.CheckBox FPS;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelFPS;
-        private System.Windows.Forms.NumericUpDown numericMeteor;
+        private System.Windows.Forms.NumericUpDown numeriсM;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericB;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numericSootn;
     }
 }
 
